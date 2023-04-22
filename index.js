@@ -1,3 +1,5 @@
+const connectDB = require("./mongodb/connect.js");
+const dotenv = require("dotenv");
 const express=require('express');
 const bodyParser=require('body-parser');
 const app= express();
@@ -5,7 +7,8 @@ const port=8800
 const ejsexpresslayout=require('express-ejs-layouts');
 const sassMiddlWare=require('sass-middleware')
 app.use(express.urlencoded());
-const mongoose=require('./config/mongoose');
+
+dotenv.config();
 
 // node-sass-middleware configuration
 app.use(
@@ -30,10 +33,15 @@ app.use('/',router);
 app.set('view engine','ejs');
 app.set('views','./views');
 
+const startServer = async () => {
+    try {
+        connectDB(process.env.MONGODB_URL );
 
-app.listen(port,function(err){
-    if(err){
-        console.log('error in running: ',err);
+        app.listen(8080, () =>
+            console.log("Server started on port http://localhost:8080"),
+        );
+    } catch (error) {
+        console.log(error);
     }
-    console.log('server is running in the port',port)
-})
+};
+startServer();

@@ -1,0 +1,54 @@
+header .heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .heading p {
+  margin: auto;
+  padding: 20px;
+  font-size: 48px;
+  text-align: center;
+  width: 80%;
+  font-family: 'Lobster', cursive;
+  color: #F2B138;
+  text-shadow: 2px 2px #E59727;
+}
+
+header .heading a {
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 10px;
+  color: #F2B138;
+  margin: 20px;
+  font-family: 'Indie Flower', cursive;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+
+header .heading a .add-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #F2B138;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .heading a .plus-sign {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #F2B138;
+  transform: rotate(45deg);
+}
+
+header .heading a:hover {
+  color: white;
+  background-color: #F2B138;
+}
+

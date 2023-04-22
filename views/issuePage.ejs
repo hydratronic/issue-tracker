@@ -1,0 +1,33 @@
+<div id="createProject">
+    <div class="create-box">
+        <h2>Report Issue</h2>
+        <form action="/issue/create" method="post">
+            <div class="user-box">
+                <input type="text" name="title" required>
+                <label>Title:</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="description" required>
+                <label>Description:</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="author" required>
+                <label>Author:</label>
+            </div>
+            <input type="hidden" name="projectRef" value="<%= projectId %>">
+            <div class="user-box">
+                <select name="labels" id="selectbox" required>
+                    <option value="" disabled selected>Select Issue Type</option>
+                    <option>Personal</option>
+                    <option>Work</option>
+                    <option>System</option>
+                    <option>Runtime</option>    
+                </select>
+               
+            </div>
+            <div class="user-box">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</div>
